@@ -5,7 +5,7 @@ import { LoginComponent } from './views/login/login.component';
 import { SmartMsgComponent } from './views/smart-msg/smart-msg.component';
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/set-message', pathMatch: 'full' },
+  { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'set-message', component: SmartMsgComponent },
