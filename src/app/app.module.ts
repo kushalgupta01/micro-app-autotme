@@ -10,11 +10,20 @@ import {InputTextModule} from 'primeng/inputtext';
 import { LoginComponent } from './views/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './views/home/home.component';
+import {CardModule} from 'primeng/card';
+import { SmartMsgComponent } from './views/smart-msg/smart-msg.component';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {FieldsetModule} from 'primeng/fieldset';
+import {CalendarModule} from 'primeng/calendar';
+import {InputNumberModule} from 'primeng/inputnumber';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SmartMsgComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +33,15 @@ import { HomeComponent } from './views/home/home.component';
     BrowserAnimationsModule,
     InputTextModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CardModule,
+    RadioButtonModule,
+    InputTextareaModule,
+    FieldsetModule,
+    CalendarModule,
+    InputNumberModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

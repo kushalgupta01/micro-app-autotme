@@ -1,0 +1,61 @@
+<div class="grid p-fluid">
+    <div class="col-12 md:col-4 logo">autotme</div>
+    <div class="title"> Messaging Platform</div>
+
+    <div class="msg-type">
+        <div style="font-weight: 600;"> Select Type of Message</div>
+        <div class="cards">
+            <div class="field-radiobutton">
+                <p-radioButton name="msgType" value="static" [(ngModel)]="smartMsg.msgType" inputId="static">
+                </p-radioButton>
+                <label for="static"> Static Message</label>
+            </div>
+            <div class="field-radiobutton">
+                <p-radioButton name="msgType" value="api" [(ngModel)]="smartMsg.msgType" inputId="api"></p-radioButton>
+                <label for="api">Api Based Message</label>
+            </div>
+        </div>
+
+
+        <div style="font-weight: 600;margin-top: 10px;"> Add Message Content</div>
+        <div class="field" style="margin-top: 30px;">
+            <label for="username1" class="block">Enter API End Point (optional)</label>
+            <input id="username1" type="username" aria-describedby="username1-help" pInputText
+                [(ngModel)]="smartMsg.apiEndPoint" />
+
+        </div>
+        <div class="field" style="margin-top: 10px;">
+            <label for="staticMsg" class="block">Enter Text</label>
+            <textarea  id="staticMsg"   [(ngModel)]="smartMsg.text" pInputTextarea></textarea>        
+        </div>
+        <div class="field" style="margin-top: 10px;">
+            <label for="username1" class="block">Enter Image Url</label>
+            <input id="username1" type="username" aria-describedby="username1-help" pInputText
+                [(ngModel)]="smartMsg.imageUrl" />
+
+        </div> <div class="field" style="margin-top: 10px;">
+            <label for="username1" class="block">Enter Landing Url</label>
+            <input id="username1" type="username" aria-describedby="username1-help" pInputText
+                [(ngModel)]="smartMsg.landingUrl" />
+
+        </div>
+        <div style="margin-top: 30px;">When to send this message</div>
+        <p-fieldset style="margin-top: 10px;" legend="One Time">
+            <div class="field col-12 md:col-4">
+                <label for="icon">Date</label>
+                <p-calendar [(ngModel)]="smartMsg.date" [showIcon]="true" inputId="icon"></p-calendar>
+            </div>
+            <div style="margin-top: 10px;" class="field col-12 md:col-3">
+                <label for="timeonly">Time</label>
+                <p-calendar [(ngModel)]="smartMsg.time" [timeOnly]="true"  inputId="time"></p-calendar>
+            </div>
+        </p-fieldset>
+        <p-fieldset style="margin-top: 10px;" legend="Recurring">
+            Every Sunday
+        </p-fieldset>
+
+
+        <div class="col-4 md:col-4  mt-10" style="margin-top: 10px;">
+            <button pButton type="button" class="p-button-raised p-button-rounded" (click)="submitData($event)">Submit</button>
+        </div>
+    </div>
