@@ -11,8 +11,19 @@
     padding-top: 30%;
     font-size: 1em;
     color: var(--text-color);
-    grid-column: 1/9;
+    
     margin-bottom: 10px;
+}
+.regen-otp-msg{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.regen-otp-msg p{
+    font-size: 1em;
+    color: var(--text-color);
+    text-align: center;
+    padding: 0.75rem 0;
 }
 
 .grid{
@@ -20,10 +31,11 @@
     grid-template-columns: repeat(8,1fr);
 }
 
-.text-input input{
-    width: 100%;
+.text-input p-inputNumber{
+  
     grid-row: 1;
     grid-column: 2/8;
+    margin: auto;
 }
 
 .gen-otp-btn button{
@@ -34,7 +46,7 @@
     grid-column: 3/7;
 }
 
-.sent-otp-msg p {
+.resent-otp-msg p {
     text-align: center;
     margin-top: 20px;
     font-size: .8em;
@@ -58,8 +70,8 @@
        margin-bottom: 10px;
     }
 
-    .text-input input{
-        width: 100%;
+    .text-input p-inputNumber{
+        
         grid-row: 1;
         grid-column: 3/7;
     }

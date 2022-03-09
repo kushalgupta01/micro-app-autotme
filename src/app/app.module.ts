@@ -18,6 +18,7 @@ import {FieldsetModule} from 'primeng/fieldset';
 import {CalendarModule} from 'primeng/calendar';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { LoginOtpComponent } from './views/login/login-otp/login-otp.component';
+import { VerifyOtpComponent } from './views/login/verify-otp/verify-otp.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginOtpComponent } from './views/login/login-otp/login-otp.component';
     LoginComponent,
     HomeComponent,
     SmartMsgComponent,
-    LoginOtpComponent
+    LoginOtpComponent,
+    VerifyOtpComponent
   ],
   imports: [
     BrowserModule,

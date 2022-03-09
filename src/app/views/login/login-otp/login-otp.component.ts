@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginOtpComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private router: Router) { }
   telegramChannelName: string | undefined;
   isOtpGenerationSuccesful:boolean=false;
   ngOnInit(): void {
@@ -18,7 +19,7 @@ export class LoginOtpComponent implements OnInit {
 
   generateOTP(){
     
-  console.log("generate otp")
+    this.router.navigate(['/verify-otp']);
 
   }
 }
