@@ -1,0 +1,16 @@
+<div class="logo"> autotme </div>
+<div  class="channel-name-label">
+    <p>Enter Registered Telegram Channel/ Group Name</p>
+</div>
+
+<div class="text-input grid">
+    <input type="text" pInputText [(ngModel)]="telegramChannelName"/>
+</div>
+<div class="gen-otp-btn grid">
+    <button pButton type="button" [disabled]="!telegramChannelName" label="Generate OTP" (click)="generateOTP()" ></button>
+</div>
+
+<div class="sent-otp-msg">
+    <p>You will receive OTP on your registered number</p>
+</div>
+

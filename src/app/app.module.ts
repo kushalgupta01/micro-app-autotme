@@ -17,13 +17,15 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FieldsetModule} from 'primeng/fieldset';
 import {CalendarModule} from 'primeng/calendar';
 import {InputNumberModule} from 'primeng/inputnumber';
+import { LoginOtpComponent } from './views/login/login-otp/login-otp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    SmartMsgComponent
+    SmartMsgComponent,
+    LoginOtpComponent
   ],
   imports: [
     BrowserModule,

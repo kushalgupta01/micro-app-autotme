@@ -1,0 +1,39 @@
+.logo{
+    color: var(--autotme-primary);
+    font-size: 2em;
+    padding-top: 8%;
+    padding-left: 5%;
+}
+
+.channel-name-label p{
+    text-align: center;
+    padding-top: 15%;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+}
+
+.text-input input{
+    width: 100%;
+    grid-row: 1;
+    grid-column: 2/8;
+}
+
+.gen-otp-btn button{
+    width: 100%;
+    font-size: .8em;
+    grid-row: 1;
+    margin-top: 10px;
+    grid-column: 4/6;
+}
+
+.sent-otp-msg p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: .8em;
+    color: var(--autotme-error);
+}
