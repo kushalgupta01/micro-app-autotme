@@ -22,11 +22,11 @@ export class LoginOtpComponent implements OnInit {
     if(this.telegramChannelName){
       this.loginService.generateOTP(this.telegramChannelName).subscribe(data=>{
         console.log(data);
-        this.router.navigate(['/verify-otp']);
+      
       })
     }
     
-
+    this.router.navigate(['/verify-otp']);
 
   }
 }
