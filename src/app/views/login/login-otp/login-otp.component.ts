@@ -20,13 +20,19 @@ export class LoginOtpComponent implements OnInit {
 
   generateOTP(){
     if(this.telegramChannelName){
-      this.loginService.generateOTP(this.telegramChannelName).subscribe(data=>{
+      this.loginService.generateOTP(this.telegramChannelName).subscribe((data:any)=>{
         console.log(data);
         this.router.navigate(['/verify-otp']);
+        localStorage.setItem('otp',data.message.split(',')[1])
+        if(this.telegramChannelName){
+          localStorage.setItem('channelName',this.telegramChannelName);
+        }
+        
+       
       },error=>{
         console.log(error);
         this.errormsg=error.message;
-        this.router.navigate(['/verify-otp']);
+       
       })
     }
     

@@ -1,4 +1,7 @@
 <div class="logo"> autotme </div>
+
+
+
 <div  class="channel-name-label">
     <p>Enter OTP</p>
 </div>
@@ -11,7 +14,9 @@
 <div class="gen-otp-btn grid">
     <button pButton type="button" [disabled]="!otpValue" label="Submit OTP" (click)="verifyOTP()" ></button>
 </div>
-
+<div class="otp-label">
+    <p>{{otp}}</p>
+</div>
 <div class="regen-otp-msg">
     <p>To regenerate OTP : </p> <p-button label="Click here" styleClass="p-button-link" (click)="regenerateOTP()"></p-button>
 </div>

@@ -6,8 +6,8 @@ import { GENERATE_OTP, VERIFY_OTP } from '../autotme-urls';
   providedIn: 'root'
 })
 export class LoginService {
-  verifyOtp(otp:number) {
-    return this.http.get(VERIFY_OTP(9619495380,'testingautotme',otp));
+  verifyOtp(otp:number,channelname:string | null) {
+    return this.http.get(VERIFY_OTP(9619495380,channelname,otp));
   }
 
   constructor(private http:HttpClient) {

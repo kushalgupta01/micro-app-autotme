@@ -8,45 +8,46 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./verify-otp.component.scss']
 })
 export class VerifyOtpComponent implements OnInit {
-  errormsg:string='';
-  constructor(private router: Router, private loginService:LoginService) { }
+  errormsg: string = '';
+  otp: string | null = '';
+  constructor(private router: Router, private loginService: LoginService) { }
   otpValue: string | undefined;
-  isOtpGenerationSuccesful:boolean=false;
+  isOtpGenerationSuccesful: boolean = false;
   ngOnInit(): void {
-
+    this.otp = localStorage.getItem('otp');
   }
 
-  verifyOTP(){
-    
-    if(this.otpValue){
-      this.loginService.verifyOtp(+this.otpValue).subscribe(data=>{
+  verifyOTP() {
+
+    if (this.otpValue) {
+      this.loginService.verifyOtp(+this.otpValue,localStorage.getItem('channelName')).subscribe(data => {
         console.log(data);
         this.router.navigate(['/home']);
-      },error=>{
+      }, error => {
         console.log(error);
-        this.errormsg=error.message;
-        this.router.navigate(['/home']);
-      })
-    }
-  
-
-  }
-
-  enteredOtp(otp:any){
-    this.otpValue = otp.value;
- 
-  }
-  regenerateOTP(){
-    
-      this.loginService.generateOTP('testingautotme').subscribe(data=>{
-        console.log(data);
-        
-      },error=>{
-        console.log(error);
-        this.errormsg=error.message;
+        this.errormsg = error.message;
       
       })
-    
-    
+    }
+
+
+  }
+
+  enteredOtp(otp: any) {
+    this.otpValue = otp.value;
+
+  }
+  regenerateOTP() {
+
+    this.loginService.generateOTP('testingautotme').subscribe(data => {
+      console.log(data);
+
+    }, error => {
+      console.log(error);
+      this.errormsg = error.message;
+
+    })
+
+
   }
 }
