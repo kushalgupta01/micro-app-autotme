@@ -17,7 +17,7 @@ h3{
 
 .home{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill,minmax(225px, 1fr));
     margin-top: 30px;
     grid-gap: 1em;
     padding: 30px;
@@ -27,4 +27,13 @@ h3{
 .home p-card{
    
     text-align: center;
+}
+
+:host ::ng-deep {
+    .p-card .p-card-body{
+        height: 225px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
 }
