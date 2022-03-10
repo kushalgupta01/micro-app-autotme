@@ -54,7 +54,12 @@
     color: var(--autotme-error);
 }
 
-
+.sent-otp-err-msg {
+    text-align: center;
+    margin-top: 20px;
+    font-size: .8em;
+    color: var(--autotme-error);
+}
 @media screen and (min-width: 968px) {
 
     

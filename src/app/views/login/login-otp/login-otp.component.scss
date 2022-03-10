@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+body{
+    font-size: 20px;
+}
+
 
 .channel-name-label p{
     text-align: center;
@@ -36,6 +40,13 @@
 }
 
 .sent-otp-msg p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: .8em;
+    color: var(--autotme-info);
+}
+
+.sent-otp-err-msg {
     text-align: center;
     margin-top: 20px;
     font-size: .8em;
@@ -73,8 +84,5 @@
         grid-column: 4/6;
     }
 
-    body{
-        font-size: 30px !important;
-    }
 
 }

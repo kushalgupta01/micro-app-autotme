@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginOtpComponent implements OnInit {
 
-
+  errormsg:string='';
   constructor(private router: Router, private loginService:LoginService) { }
   telegramChannelName: string | undefined;
   isOtpGenerationSuccesful:boolean=false;
@@ -22,11 +22,15 @@ export class LoginOtpComponent implements OnInit {
     if(this.telegramChannelName){
       this.loginService.generateOTP(this.telegramChannelName).subscribe(data=>{
         console.log(data);
-      
+        this.router.navigate(['/verify-otp']);
+      },error=>{
+        console.log(error);
+        this.errormsg=error.message;
+        this.router.navigate(['/verify-otp']);
       })
     }
     
-    this.router.navigate(['/verify-otp']);
+  
 
   }
 }

@@ -13,6 +13,8 @@
 </div>
 
 <div class="regen-otp-msg">
-    <p>To regenerate OTP : </p> <p-button label="Click here" styleClass="p-button-link"></p-button>
+    <p>To regenerate OTP : </p> <p-button label="Click here" styleClass="p-button-link" (click)="regenerateOTP()"></p-button>
 </div>
-
+<div class="sent-otp-err-msg">
+    <p>{{errormsg}}</p>
+</div>
