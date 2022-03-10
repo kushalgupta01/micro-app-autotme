@@ -15,7 +15,7 @@ export class LoginService {
    }
 
 
-  generateOTP(channelname:string){
+  generateOTP(channelname:string | null){
     return this.http.get(GENERATE_OTP(9619495380,channelname));
   }
 }

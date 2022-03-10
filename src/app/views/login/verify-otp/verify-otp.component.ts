@@ -39,9 +39,9 @@ export class VerifyOtpComponent implements OnInit {
   }
   regenerateOTP() {
 
-    this.loginService.generateOTP('testingautotme').subscribe(data => {
+    this.loginService.generateOTP(localStorage.getItem('channelName')).subscribe((data:any) => {
       console.log(data);
-
+      this.otp= data.message.split(',')[1];
     }, error => {
       console.log(error);
       this.errormsg = error.message;
