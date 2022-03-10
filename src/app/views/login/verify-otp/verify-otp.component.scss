@@ -54,7 +54,7 @@
 }
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 968px) {
 
     
    
@@ -75,13 +75,15 @@
         grid-row: 1;
         grid-column: 3/7;
     }
-    
+    .gen-otp-btn{
+        grid-template-columns: repeat(16,1fr);
+    }
     .gen-otp-btn button{
       
         font-size: .8em;
         grid-row: 1;
         margin-top: 20px;
-        grid-column: 4/6;
+        grid-column: 8/10;
     }
 
     body{

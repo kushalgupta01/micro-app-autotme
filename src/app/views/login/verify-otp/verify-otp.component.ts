@@ -19,4 +19,9 @@ export class VerifyOtpComponent implements OnInit {
   console.log("verifyOTP otp")
 
   }
+
+  enteredOtp(otp:any){
+    this.otpValue = otp.value;
+ 
+  }
 }
