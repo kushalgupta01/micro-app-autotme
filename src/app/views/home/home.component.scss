@@ -27,7 +27,9 @@ h3{
 .home p-card{
    
     text-align: center;
+    box-shadow: 0 2px 1px -1px #6366f1;
 }
+
 
 :host ::ng-deep {
     .p-card .p-card-body{
@@ -35,5 +37,37 @@ h3{
         display: flex;
     justify-content: center;
     align-items: center;
+    }
+}
+
+@media screen and (min-width: 968px) {
+    .logo{
+        color: var(--autotme-primary);
+        padding-top: 5%;
+        padding-left: 4%;text-align: start;
+    }
+
+    h3{
+        color: var(--text-color);
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .home{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+        margin-top: 30px;
+        grid-gap: 1em;
+        padding: 0% 10%;
+        color: var(--text-color);
+    }
+
+    :host ::ng-deep {
+        .p-card .p-card-body{
+            height: 100px;
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        }
     }
 }
