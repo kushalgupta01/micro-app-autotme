@@ -21,6 +21,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { LoginOtpComponent } from './views/login/login-otp/login-otp.component';
 import { VerifyOtpComponent } from './views/login/verify-otp/verify-otp.component';
 import {TooltipModule} from 'primeng/tooltip';
+import {SidebarModule} from 'primeng/sidebar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,8 +47,8 @@ import {TooltipModule} from 'primeng/tooltip';
     FieldsetModule,
     CalendarModule,
     InputNumberModule,
-    TooltipModule
-    
+    TooltipModule,
+    SidebarModule
 
   ],
   providers: [],

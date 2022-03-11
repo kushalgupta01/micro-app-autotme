@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class HomeComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
-
+  visibleSidebar1:boolean=false;
   ngOnInit(): void {
   }
 

@@ -30,6 +30,22 @@ h3{
     box-shadow: 0 2px 1px -1px #6366f1;
 }
 
+.header{
+    display: none ;
+}
+.mob-header .logo{
+ 
+    text-align: center;
+    width: 100%;
+    align-items: center;
+}
+
+.slider{
+    position: absolute;
+    top: 32px;
+    left: 22px;
+  
+}
 
 :host ::ng-deep {
     .p-card .p-card-body{
@@ -43,6 +59,10 @@ h3{
 
 @media screen and (min-width: 968px) {
 
+    .mob-header{
+        display: none ;
+    }
+    
     .logout{
         padding-top: 5%;
         margin-right: 100px;

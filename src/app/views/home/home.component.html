@@ -1,12 +1,21 @@
 
+<p-sidebar [(visible)]="visibleSidebar1" p-sidebar-sm [baseZIndex]="10000">
+    <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="visibleSidebar1 = true" label="logout"></p-button>
+</p-sidebar>
 <div class="header">
     <div class="logo"> autotme </div>
-    <div class="logout">
-        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" ></p-button>
+    <div  class="logout">
+        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="visibleSidebar1 = true" ></p-button>
     </div>
 </div>
 
-
+<div class="mob-header">
+    <div class="slider">
+        <p-button icon="pi pi-align-justify"  (click)="visibleSidebar1 = true" ></p-button>
+    </div>
+    <div class="logo"> autotme </div>
+   
+</div>
 <h3>Create Automation</h3>
 <div class="home">
     <p-card  routerLink="/set-message"  styleClass="p-card-shadow">
