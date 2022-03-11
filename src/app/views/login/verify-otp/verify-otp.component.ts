@@ -24,9 +24,10 @@ export class VerifyOtpComponent implements OnInit {
   verifyOTP() {
 
     if (this.otpValue) {
-      this.loginService.verifyOtp(+this.otpValue,localStorage.getItem('channelName')).subscribe(data => {
+      this.loginService.verifyOtp(+this.otpValue,localStorage.getItem('channelName')).subscribe((data:any) => {
         console.log(data);
         this.isCorrectOTPEntered = true;
+        localStorage.setItem('token',data.token);
         this.router.navigate(['/home']);
       }, error => {
         console.log(error);

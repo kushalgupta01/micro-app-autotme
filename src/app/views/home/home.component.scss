@@ -40,7 +40,19 @@ h3{
     }
 }
 
+
 @media screen and (min-width: 968px) {
+
+    .logout{
+        padding-top: 5%;
+        margin-right: 100px;
+    }
+    
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .logo{
         color: var(--autotme-primary);
         padding-top: 5%;

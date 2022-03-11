@@ -20,7 +20,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { LoginOtpComponent } from './views/login/login-otp/login-otp.component';
 import { VerifyOtpComponent } from './views/login/verify-otp/verify-otp.component';
-
+import {TooltipModule} from 'primeng/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +46,7 @@ import { VerifyOtpComponent } from './views/login/verify-otp/verify-otp.componen
     FieldsetModule,
     CalendarModule,
     InputNumberModule,
+    TooltipModule
     
 
   ],

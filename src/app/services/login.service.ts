@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { GENERATE_OTP, IS_USER_REGISTERED, VERIFY_OTP } from '../autotme-urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,private router:Router) {
     
   }
 
@@ -22,5 +23,14 @@ export class LoginService {
 
   generateOTP(channelname:string | null){
     return this.http.get(GENERATE_OTP(9619495380,channelname));
+  }
+
+  isUserLoggedIn(){
+    return localStorage.getItem('token');
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['login']);
   }
 }
