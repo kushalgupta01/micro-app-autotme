@@ -13,8 +13,12 @@ export class VerifyOtpComponent implements OnInit {
   constructor(private router: Router, private loginService: LoginService) { }
   otpValue: string | undefined;
   isOtpGenerationSuccesful: boolean = false;
+  mobileNumber:string | undefined;
+  isCorrectOTPEntered:boolean=true;
   ngOnInit(): void {
     this.otp = localStorage.getItem('otp');
+    let mobile= '9619495380'
+    this.mobileNumber= mobile.replace(/\d(?=\d{4})/g, "X");
   }
 
   verifyOTP() {
@@ -22,11 +26,11 @@ export class VerifyOtpComponent implements OnInit {
     if (this.otpValue) {
       this.loginService.verifyOtp(+this.otpValue,localStorage.getItem('channelName')).subscribe(data => {
         console.log(data);
+        this.isCorrectOTPEntered = true;
         this.router.navigate(['/home']);
       }, error => {
         console.log(error);
-        this.errormsg = error.message;
-      
+        this.isCorrectOTPEntered = false;
       })
     }
 

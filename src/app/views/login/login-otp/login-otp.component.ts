@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IS_USER_REGISTERED } from 'src/app/autotme-urls';
 import { LoginService } from 'src/app/services/login.service';
 
 
@@ -10,33 +11,49 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginOtpComponent implements OnInit {
 
-  errormsg:string='';
-  constructor(private router: Router, private loginService:LoginService) { }
-  telegramChannelName: string | undefined;
-  isOtpGenerationSuccesful:boolean=false;
+  isUserRegistered:boolean=true;
+  errormsg: string = '';
+  constructor(private router: Router, private loginService: LoginService) { }
+  telegramChannelName: string | null = null;
+  isOtpGenerationSuccesful: boolean = false;
   ngOnInit(): void {
 
   }
 
-  generateOTP(){
-    if(this.telegramChannelName){
-      this.loginService.generateOTP(this.telegramChannelName).subscribe((data:any)=>{
-        console.log(data);
-        this.router.navigate(['/verify-otp']);
-        localStorage.setItem('otp',data.message.split(',')[1])
-        if(this.telegramChannelName){
-          localStorage.setItem('channelName',this.telegramChannelName);
-        }
-        
-       
-      },error=>{
-        console.log(error);
-        this.errormsg=error.message;
-       
-      })
-    }
-    
-  
+  async generateOTP() {
+
+    this.loginService.isUserRegistered(this.telegramChannelName).subscribe((data:any) => {
+      if(data.flow === "login"){
+        this.generateOTPForUser(this.telegramChannelName);
+        this.isUserRegistered=true;
+      }else{
+        this.isUserRegistered=false;
+      }
+    })
+
+
+
 
   }
+  generateOTPForUser(telegramChannelName: string | null) {
+    this.loginService.generateOTP(this.telegramChannelName).subscribe((data: any) => {
+      console.log(data);
+      this.router.navigate(['/verify-otp']);
+      localStorage.setItem('otp', data.message.split(',')[1])
+      if (this.telegramChannelName) {
+        localStorage.setItem('channelName', this.telegramChannelName);
+      }
+
+
+    }, error => {
+      console.log(error);
+      this.errormsg = error.message;
+
+    })
+  }
+
+  signup(){
+    console.log("signup implementation is pending")
+  }
+  
 }

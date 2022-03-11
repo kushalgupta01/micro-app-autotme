@@ -14,7 +14,8 @@
     <p>You will receive OTP on your registered number</p>
 </div>
 
-<div class="sent-otp-err-msg">
-    <p>{{errormsg}}</p>
+
+<div *ngIf="!isUserRegistered" class="non-user-msg">
+    <p> Entered telegram channel is not registered with us. To sign up : </p> <p-button label="Click here" styleClass="p-button-link" (click)="signup()"></p-button>
 </div>
 

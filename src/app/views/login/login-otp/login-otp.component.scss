@@ -53,6 +53,14 @@ body{
     color: var(--autotme-error);
 }
 
+.non-user-msg{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+    padding: 10px;
+    color: var(--autotme-error);
+   
+}
 
 @media screen and (min-width: 968px) {
 
@@ -83,6 +91,17 @@ body{
         margin-top: 20px;
         grid-column: 4/6;
     }
+
+    .non-user-msg{
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1em;
+        color: var(--autotme-error);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
 
 
 }

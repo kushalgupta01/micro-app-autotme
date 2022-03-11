@@ -1,8 +1,10 @@
 <div class="logo"> autotme </div>
 
 
-
-<div  class="channel-name-label">
+<div class="channel-name-label">
+    <p>OTP is sent to your registered mobile number {{mobileNumber}} via SMS</p>
+</div>
+<div  class="enter-otp-label">
     <p>Enter OTP</p>
 </div>
 
@@ -20,6 +22,7 @@
 <div class="regen-otp-msg">
     <p>To regenerate OTP : </p> <p-button label="Click here" styleClass="p-button-link" (click)="regenerateOTP()"></p-button>
 </div>
-<div class="sent-otp-err-msg">
-    <p>{{errormsg}}</p>
+
+<div *ngIf="!isCorrectOTPEntered" class="wrong-otp-msg">
+    <p> Entered OTP is incorrect. Kindly re-enter correct OTP or regenerate OTP.</p> 
 </div>
