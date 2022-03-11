@@ -13,7 +13,7 @@ export class LoginService {
 
   isUserRegistered(channelname:string | null){
     const headers={'content-type':'application/json'};
-    const body = {'telegram_link':`https://t.me/${channelname}`}
+    const body = {'telegram_link':`${channelname}`}
     return this.http.post(IS_USER_REGISTERED(channelname),body,{'headers':headers});
   }
 

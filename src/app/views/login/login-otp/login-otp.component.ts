@@ -22,6 +22,14 @@ export class LoginOtpComponent implements OnInit {
 
   async generateOTP() {
 
+    if(this.telegramChannelName?.includes('https')){
+      this.telegramChannelName =  this.telegramChannelName;
+    }else if(this.telegramChannelName?.includes('t.me')){
+      this.telegramChannelName = `https://${this.telegramChannelName}`;
+    }else{
+      this.telegramChannelName = `https://t.me/${this.telegramChannelName}`;
+    }
+
     this.loginService.isUserRegistered(this.telegramChannelName).subscribe((data:any) => {
       if(data.flow === "login"){
         this.generateOTPForUser(this.telegramChannelName);
