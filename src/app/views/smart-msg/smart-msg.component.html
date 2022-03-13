@@ -1,4 +1,4 @@
-<div class="grid p-fluid">
+<!-- <div class="grid p-fluid">
     <div class="col-12 md:col-4 logo">autotme</div>
     <div class="title"> Messaging Platform</div>
 
@@ -58,4 +58,90 @@
         <div class="col-4 md:col-4  mt-10" style="margin-top: 10px;">
             <button pButton type="button" class="p-button-raised p-button-rounded" (click)="submitData($event)">Submit</button>
         </div>
+    </div> -->
+
+<div style="padding-bottom: 20px;">
+<p-sidebar [(visible)]="visibleSidebar1" p-sidebar-sm [baseZIndex]="10000">
+    <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" label="logout"></p-button>
+</p-sidebar>
+<div class="header">
+    <div class="logo"> autotme </div>
+    <div class="logout">
+        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()"></p-button>
     </div>
+</div>
+
+<div class="mob-header">
+    <div class="slider">
+        <p-button icon="pi pi-align-justify" (click)="visibleSidebar1 = true"></p-button>
+    </div>
+    <div class="logo"> autotme </div>
+
+</div>
+<h3>Messaging Platform</h3>
+<div class="msg-container">
+    <p><b> Add Message Content </b></p>
+    <div class="msg-form">
+        <div class="field">
+            <p>Enter Text : </p>
+
+            <textarea class="inp-field" id="staticMsg" [(ngModel)]="smartMsg.text" pInputTextarea></textarea>
+        </div>
+        <div class="field">
+            <label for="username1" class="block">Enter Image Url : </label>
+            <input class="inp-field" id="username1" type="username" aria-describedby="username1-help" pInputText
+                [(ngModel)]="smartMsg.imageUrl" />
+
+        </div>
+
+        <div class="field">
+            <label for="username1" class="block">Enter Landing Url : </label>
+            <input class="inp-field" id="username1" type="username" aria-describedby="username1-help" pInputText
+                [(ngModel)]="smartMsg.landingUrl" />
+
+        </div>
+
+        <div class="field">
+            <p-divider align="left">
+                When to send this message
+            </p-divider>
+
+        </div>
+
+        <div class="field">
+            <div>
+                <p>Date : </p>
+            </div>
+            <p-calendar class="inp-field" [touchUI]="true" [readonlyInput]="true" inputId="touchui"></p-calendar>
+        </div>
+        <div class="field">
+            <div>
+                <p>Time : </p>
+            </div>
+            <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'" inputId="timeonly"></p-calendar>
+        </div>
+
+        <div class="field">
+            <div>
+                <p>Repeat : </p>
+            </div>
+            
+            <p-button class="inp-field" label="None" styleClass="p-button-link" (click)="showBasicDialog()"></p-button>
+         
+            <p-dialog header="Header" [(visible)]="displayBasic" [style]="{width: '50vw'}">
+                <p>content</p>
+                <ng-template pTemplate="footer">
+                    <p-button icon="pi pi-check" (click)="displayBasic=false" label="Ok" styleClass="p-button-text">
+                    </p-button>
+                </ng-template>
+            </p-dialog>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="save-changes-btn"><button pButton type="button"  label="Save changes" ></button></div>
+</div>

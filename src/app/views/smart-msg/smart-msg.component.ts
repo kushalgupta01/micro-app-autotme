@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'autotme-smart-msg',
@@ -7,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmartMsgComponent implements OnInit {
 
-  constructor() { }
+   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  
+  visibleSidebar1:boolean=false;
+  displayBasic:boolean=false;
+  logout() {
+    this.loginService.logout();
+  }
+
   smartMsg={
     msgType:'static',
     apiEndPoint:'',
@@ -23,8 +29,10 @@ export class SmartMsgComponent implements OnInit {
     time:null
   }
 
-  submitData(event:any){
-console.log(this.smartMsg)
-  }
+  
+  showBasicDialog() {
+    this.displayBasic = true;
+}
+
 
 }

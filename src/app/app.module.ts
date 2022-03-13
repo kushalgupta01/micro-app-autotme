@@ -22,6 +22,9 @@ import { LoginOtpComponent } from './views/login/login-otp/login-otp.component';
 import { VerifyOtpComponent } from './views/login/verify-otp/verify-otp.component';
 import {TooltipModule} from 'primeng/tooltip';
 import {SidebarModule} from 'primeng/sidebar';
+import {DividerModule} from 'primeng/divider';
+import {DialogModule} from 'primeng/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +36,7 @@ import {SidebarModule} from 'primeng/sidebar';
   ],
   imports: [
     BrowserModule,
+    DialogModule,
     AppRoutingModule,
     PasswordModule,
     ButtonModule,
@@ -48,7 +52,8 @@ import {SidebarModule} from 'primeng/sidebar';
     CalendarModule,
     InputNumberModule,
     TooltipModule,
-    SidebarModule
+    SidebarModule,
+    DividerModule
 
   ],
   providers: [],

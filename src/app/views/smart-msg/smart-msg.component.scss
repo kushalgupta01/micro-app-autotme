@@ -1,34 +1,55 @@
-.title{
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: center;
-    margin-top: 10px;
-    align-items: center;
-    /* margin-left: 20px; */
-    font-size: 30px;
-}
-.cards{
-    display: flex;
-justify-content: space-evenly;
-text-align: center;
-margin: 20px;
-cursor: pointer;
-}
+
 .logo{
-    color: #6366F1;
+    color: var(--autotme-primary);
+    font-size: 2em;
+    padding-top: 10%;
     
-    padding-top: 30px;
-    margin-left: 20px;
-    font-size: 30px;
+    text-align: center;
+}
+.inp-field{
+    margin-top: 10px;
+}
+.save-changes-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 100px;
 }
 
-.msg-type{    display: flex;
-    /* justify-content: stretch; */
-    flex-direction: column;
-    width: max-content;
-    margin: auto;
+.header{
+    display: none ;
+}
+.mob-header .logo{
+ 
+    text-align: center;
+    width: 100%;
+    align-items: center;
 }
 
-.field-radiobutton{
-    margin-right: 20px;
+.slider{
+    position: absolute;
+    top: 32px;
+    left: 22px;
+  
+}
+
+.msg-container{
+
+    padding: 30px;
+}
+.msg-form .field{
+
+    margin-top: 10px;
+
+    input,textarea  {
+        width: 100%;
+    }
+}
+
+.msg-form .field ::ng-deep .p-divider-content{
+font-size: 12px;
 }
