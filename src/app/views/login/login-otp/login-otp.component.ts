@@ -37,6 +37,9 @@ export class LoginOtpComponent implements OnInit {
       }else{
         this.isUserRegistered=false;
       }
+    },err=>{
+      console.log(err)
+      this.errormsg = "Maybe server is down. Please retry again in some time.";
     })
 
 

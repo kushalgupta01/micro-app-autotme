@@ -109,13 +109,13 @@
         </div>
 
         <div class="field">
-            <div>
+            <div style="margin-bottom: 10px;">
                 <p>Date : </p>
             </div>
             <p-calendar class="inp-field" [touchUI]="true" [readonlyInput]="true" inputId="touchui"></p-calendar>
         </div>
         <div class="field">
-            <div>
+            <div style="margin-bottom: 10px;">
                 <p>Time : </p>
             </div>
             <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'" inputId="timeonly"></p-calendar>
@@ -128,8 +128,9 @@
             
             <p-button class="inp-field" label="None" styleClass="p-button-link" (click)="showBasicDialog()"></p-button>
          
-            <p-dialog header="Header" [(visible)]="displayBasic" [style]="{width: '50vw'}">
-                <p>content</p>
+            <p-dialog [modal]="true" [blockScroll]="true" header="Repeat" [(visible)]="displayBasic" [style]="{width: '90vw',height:'60vh'}">
+                <p-dropdown [options]="repeatSelection" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+
                 <ng-template pTemplate="footer">
                     <p-button icon="pi pi-check" (click)="displayBasic=false" label="Ok" styleClass="p-button-text">
                     </p-button>

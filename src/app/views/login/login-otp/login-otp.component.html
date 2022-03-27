@@ -19,3 +19,7 @@
     <p> Entered telegram channel is not registered with us. To sign up : </p> <p-button label="Click here" styleClass="p-button-link" (click)="signup()"></p-button>
 </div>
 
+<div *ngIf="errormsg" class="non-user-msg">
+    <p> {{errormsg}} </p> 
+</div>
+

@@ -24,6 +24,11 @@ import {TooltipModule} from 'primeng/tooltip';
 import {SidebarModule} from 'primeng/sidebar';
 import {DividerModule} from 'primeng/divider';
 import {DialogModule} from 'primeng/dialog';
+import {DropdownModule} from 'primeng/dropdown';
+import { SetupSocialMediaComponent } from './views/setup-social-media/setup-social-media.component';
+import { SocialMediaLinkRendererComponent } from './views/shared/social-media-link-renderer/social-media-link-renderer.component';
+import { MyLinksPageComponent } from './views/my-links-page/my-links-page.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +37,10 @@ import {DialogModule} from 'primeng/dialog';
     HomeComponent,
     SmartMsgComponent,
     LoginOtpComponent,
-    VerifyOtpComponent
+    VerifyOtpComponent,
+    SetupSocialMediaComponent,
+    SocialMediaLinkRendererComponent,
+    MyLinksPageComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,8 @@ import {DialogModule} from 'primeng/dialog';
     InputNumberModule,
     TooltipModule,
     SidebarModule,
-    DividerModule
+    DividerModule,
+    DropdownModule
 
   ],
   providers: [],

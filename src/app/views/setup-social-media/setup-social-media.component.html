@@ -1,0 +1,36 @@
+<div style="padding-bottom: 20px;">
+    <p-sidebar [(visible)]="visibleSidebar1" p-sidebar-sm [baseZIndex]="10000">
+        <p-button icon="pi pi-home" pTooltip="home" (click)="home()" label="home"></p-button>
+        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" label="logout"></p-button>
+    </p-sidebar>
+    <div class="header">
+        <div class="logo"> autotme </div>
+        <div class="logout">
+            <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()"></p-button>
+        </div>
+    </div>
+
+    <div class="mob-header">
+        <div class="slider">
+            <p-button icon="pi pi-align-justify" (click)="visibleSidebar1 = true"></p-button>
+        </div>
+        <div class="logo"> autotme </div>
+
+    </div>
+    <h3>Setup Social Media Automations</h3>
+    <div class="msg-container">
+
+  
+
+    <autotme-social-media-link-renderer></autotme-social-media-link-renderer>
+        <section class="social-media-url">
+           
+            <div *ngFor="let category of categories" class="field-checkbox">
+                <p-radioButton [inputId]="category.key" style="margin-right: 10px;" name="category" [value]="category" [(ngModel)]="selectedCategory" [disabled]="category.key === 'R'"></p-radioButton>
+                <label [for]="category.key">{{category.name}}</label>
+            </div>
+        </section>
+    </div>
+
+    <div class="save-changes-btn"><button pButton type="button" label="Submit"></button></div>
+</div>
