@@ -5,6 +5,7 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginOtpComponent } from './views/login/login-otp/login-otp.component';
 import { LoginComponent } from './views/login/login.component';
 import { VerifyOtpComponent } from './views/login/verify-otp/verify-otp.component';
+import { MyLinksPageComponent } from './views/my-links-page/my-links-page.component';
 import { SetupSocialMediaComponent } from './views/setup-social-media/setup-social-media.component';
 import { SmartMsgComponent } from './views/smart-msg/smart-msg.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'set-message', component: SmartMsgComponent },
   { path: 'setup-social-media', component: SetupSocialMediaComponent },
+  { path: 'my-link-page', component:  MyLinksPageComponent},
 ];
 
 @NgModule({

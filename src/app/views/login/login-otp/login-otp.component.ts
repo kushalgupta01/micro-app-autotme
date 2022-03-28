@@ -15,6 +15,7 @@ export class LoginOtpComponent implements OnInit {
   errormsg: string = '';
   constructor(private router: Router, private loginService: LoginService) { }
   telegramChannelName: string | null = null;
+  channelName: string | null = null;
   isOtpGenerationSuccesful: boolean = false;
   ngOnInit(): void {
 

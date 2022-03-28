@@ -1,1 +1,65 @@
-<p>my-links-page works!</p>
+<div style="padding-bottom: 20px;">
+    <p-sidebar [(visible)]="visibleSidebar1" p-sidebar-sm [baseZIndex]="10000">
+        <p-button icon="pi pi-home" pTooltip="home" (click)="home()" label="home"></p-button>
+        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" label="logout"></p-button>
+    </p-sidebar>
+    <div class="header">
+        <div class="logo"> autotme </div>
+        <div class="logout">
+            <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()"></p-button>
+        </div>
+    </div>
+
+    <div class="mob-header">
+        <div class="slider">
+            <p-button icon="pi pi-align-justify" (click)="visibleSidebar1 = true"></p-button>
+        </div>
+        <div class="logo"> autotme </div>
+
+    </div>
+    <h3>My Link Page</h3>
+    <p class="my-link-url">links.autotme.com/{{channelName}}</p>
+    <div class="msg-container">
+
+        <section>
+        <p-divider align="left">
+            <b>Social Links</b>
+        </p-divider>
+        <autotme-social-media-link-renderer></autotme-social-media-link-renderer>
+        </section>
+
+        <p-button *ngIf="links.length == 0" class="add-custom-link" label="Add Custom Link"  (click)="displayBasic=true" icon="pi pi-plus" styleClass="p-button-link"></p-button>
+        <p-dialog [modal]="true" [blockScroll]="true" header="Add New Custom Link" [(visible)]="displayBasic" [style]="{height:'45vh'}">
+           <div class="custom-input">            <section class="custom-url">
+                
+                    <input type="text" style="width:100%" [(ngModel)]="customLink.buttonName" pInputText placeholder="Enter Button Name" />
+               
+            </section>
+            <section class="custom-url">
+               
+                    <input type="text" style="width:100%" [(ngModel)]="customLink.link" pInputText placeholder="Enter Link" />
+              
+            </section>
+            </div>
+            <ng-template pTemplate="footer">
+                <p-button icon="pi pi-cross" (click)="displayBasic=false" label="Cancel" styleClass="p-button-text">
+                </p-button>
+                <p-button icon="pi pi-check" (click)="displayBasic=false; addcustomLink(customLink)" label="Ok" styleClass="p-button-text">
+                </p-button>
+            </ng-template>
+        </p-dialog>
+        <section>
+            <p-divider *ngIf="links.length > 0" align="left">
+                <b>Custom Links</b>
+            </p-divider>
+
+            <ng-container *ngFor="let custom of links">
+                <p  class="custom-link-p"> <b>{{custom.buttonName}}</b> - <u style=" color: #4F46E5;" >{{custom.link}}</u></p>
+            </ng-container>
+
+            <p-button *ngIf="links.length > 0" class="add-custom-link" label="Add Custom Link"  (click)="displayBasic=true" icon="pi pi-plus" styleClass="p-button-link"></p-button>
+        </section>
+    </div>
+
+    <div class="save-changes-btn"><button pButton type="button" label="Submit"></button></div>
+</div>

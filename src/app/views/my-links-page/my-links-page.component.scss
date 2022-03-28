@@ -1,0 +1,93 @@
+
+.logo{
+    color: var(--autotme-primary);
+    font-size: 2em;
+    padding-top: 10%;
+    
+    text-align: center;
+}
+.inp-field{
+    margin-top: 10px;
+}
+.save-changes-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.header{
+    display: none ;
+}
+.mob-header .logo{
+ 
+    text-align: center;
+    width: 100%;
+    align-items: center;
+}
+
+.slider{
+    position: absolute;
+    top: 32px;
+    left: 22px;
+  
+}
+
+.field-checkbox{
+    display: flex;
+    align-items: baseline;
+    margin-top: 15px;
+}
+
+.msg-container{
+
+    padding: 40px 30px;
+    
+ 
+}
+
+.add-custom-link ::ng-deep .p-button{
+    margin-top: 25px;
+    padding: 0px;
+    font-size: 14px;
+}
+h3{
+    color: var(--text-color);
+    margin-top: 70px;
+    margin-bottom: 0px;
+}
+
+
+
+.my-link-url{
+    text-align: center;
+    text-decoration: underline;
+    color: #4F46E5;
+}
+
+p-dialog ::ng-deep .p-dialog-content{
+    display: flex;
+
+    > .custom-input{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+  
+}
+
+p-divider b {
+    color: var(--text-color);
+}
+
+
+.custom-link-p{
+    font-size: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
