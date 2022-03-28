@@ -24,15 +24,27 @@ export class MyLinksPageComponent implements OnInit {
       buttonName:'',
       link:''
     }
+    this.links.push({
+      buttonName:'',
+      link:''
+    })
+
   }
   displayBasic:boolean=false;
 
   logout() {
     this.loginService.logout();
+   
   }
 
   home(){
     this.router.navigate(['/home']);
+  }
+  addBlankcustomLink(){
+    this.links.push({
+      buttonName:'',
+      link:''
+    })
   }
   addcustomLink(event:any){
     console.log(event);

@@ -20,7 +20,7 @@ h3{
     margin-top: 100px;
 }
 
-.header{
+.header,.desktop-msg-container{
     display: none ;
 }
 .mob-header .logo{
@@ -90,4 +90,97 @@ p-divider b {
     height: 50px;
     display: flex;
     align-items: center;
+}
+
+.social-icon{
+    min-width: 20px;
+}
+.pi-youtube{
+    color: #FF0000;
+    }
+
+    .pi-twitter{
+        color: #00ACEE;
+        }
+
+        .pi-linkedin{
+            color: #0E76A8;
+            }
+@media screen and (min-width: 968px) {
+
+    .mob-header{
+        display: none ;
+    }
+    .msg-container{
+        display: none;
+    }
+.social-media-url-body{
+    background-color: lightgrey;
+}
+    
+    .desktop-msg-container{
+        display: block;
+        width: 70%;
+        margin: auto;
+        margin-top: 25px;
+    }
+    .logout{
+        padding-top: 1%;
+        margin-right: 100px;
+    }
+    
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo{
+        color: var(--autotme-primary);
+        padding-top: 0%;
+        padding-left: 4%;text-align: start;
+    }
+
+    h3{
+        color: var(--text-color);
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .home{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+        margin-top: 30px;
+        grid-gap: 1em;
+        padding: 0% 10%;
+        color: var(--text-color);
+    }
+
+    :host ::ng-deep {
+        .p-card .p-card-body{
+            height: 100px;
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    }
+    .add-custom-link ::ng-deep .p-button {
+        margin: 0px;
+    right: 10px;
+    /* display: flex; */
+    float: right;
+    margin-top: 2px;
+    }
+    .save-changes-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+   
+    h4{
+        padding: 10px;
+        color: var(--text-color);
+        margin: 0px;
+    }
+
 }

@@ -1,34 +1,55 @@
-
 <p-sidebar [(visible)]="visibleSidebar1" p-sidebar-sm [baseZIndex]="10000">
     <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" label="logout"></p-button>
 </p-sidebar>
 <div class="header">
     <div class="logo"> autotme </div>
-    <div  class="logout">
-        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" ></p-button>
+    <div class="logout">
+        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()"></p-button>
     </div>
-</div>  
+</div>
 
 <div class="mob-header">
     <div class="slider">
-        <p-button icon="pi pi-align-justify"  (click)="visibleSidebar1 = true" ></p-button>
+        <p-button icon="pi pi-align-justify" (click)="visibleSidebar1 = true"></p-button>
     </div>
     <div class="logo"> autotme </div>
-   
+
 </div>
-<h3>Create Automation</h3>
+<h3>Engagement Features</h3>
 <div class="home">
-    <p-card  routerLink="/set-message"  styleClass="p-card-shadow">
+    <p-card routerLink="/set-message" styleClass="p-card-shadow">
         Setup Smart Messages
     </p-card>
 
     <p-card routerLink="/setup-social-media" styleClass="p-card-shadow">
         Social Media Handles
     </p-card>
-    <p-card routerLink="/my-link-page"  styleClass="p-card-shadow">
+    <p-card routerLink="/my-link-page" styleClass="p-card-shadow">
         My Links Page
     </p-card>
 
-  
-    
+
+
 </div>
+
+<h3>Monetization Features</h3>
+<div class="home">
+    <p-card routerLink="/set-message" styleClass="p-card-shadow">
+        Setup Merchandise store
+        <div>(Coming Soon)</div>
+    </p-card>
+
+    <p-card routerLink="/setup-social-media" styleClass="p-card-shadow">
+        Setup Paid Telegram Group
+        <div>(Coming Soon)</div>
+    </p-card>
+    <p-card routerLink="/my-link-page" styleClass="p-card-shadow">
+        Create Smart Payment Page
+        <div>(Coming Soon)</div>
+    </p-card>
+
+
+
+</div>
+
+<div></div>

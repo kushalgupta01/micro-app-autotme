@@ -17,34 +17,40 @@
         <div class="logo"> autotme </div>
 
     </div>
-    <h3>My Link Page</h3>
-    <p class="my-link-url">links.autotme.com/{{channelName}}</p>
+    <h3 style="padding: 5px;">My Link Page : <u>links.autotme.com/flipitnews</u> </h3>
+
     <div class="msg-container">
 
         <section>
-        <p-divider align="left">
-            <b>Social Links</b>
-        </p-divider>
-        <autotme-social-media-link-renderer></autotme-social-media-link-renderer>
+            <p-divider align="left">
+                <b>Social Links</b>
+            </p-divider>
+            <autotme-social-media-link-renderer></autotme-social-media-link-renderer>
         </section>
 
-        <p-button *ngIf="links.length == 0" class="add-custom-link" label="Add Custom Link"  (click)="displayBasic=true" icon="pi pi-plus" styleClass="p-button-link"></p-button>
-        <p-dialog [modal]="true" [blockScroll]="true" header="Add New Custom Link" [(visible)]="displayBasic" [style]="{height:'45vh'}">
-           <div class="custom-input">            <section class="custom-url">
-                
-                    <input type="text" style="width:100%" [(ngModel)]="customLink.buttonName" pInputText placeholder="Enter Button Name" />
-               
-            </section>
-            <section class="custom-url">
-               
-                    <input type="text" style="width:100%" [(ngModel)]="customLink.link" pInputText placeholder="Enter Link" />
-              
-            </section>
+        <p-button *ngIf="links.length == 0" class="add-custom-link" label="Add Custom Link" (click)="displayBasic=true"
+            icon="pi pi-plus" styleClass="p-button-link"></p-button>
+        <p-dialog [modal]="true" [blockScroll]="true" header="Add New Custom Link" [(visible)]="displayBasic"
+            [style]="{height:'45vh'}">
+            <div class="custom-input">
+                <section class="custom-url">
+
+                    <input type="text" style="width:100%" [(ngModel)]="customLink.buttonName" pInputText
+                        placeholder="Enter Button Name" />
+
+                </section>
+                <section class="custom-url">
+
+                    <input type="text" style="width:100%" [(ngModel)]="customLink.link" pInputText
+                        placeholder="Enter Link" />
+
+                </section>
             </div>
             <ng-template pTemplate="footer">
                 <p-button icon="pi pi-cross" (click)="displayBasic=false" label="Cancel" styleClass="p-button-text">
                 </p-button>
-                <p-button icon="pi pi-check" (click)="displayBasic=false; addcustomLink(customLink)" label="Ok" styleClass="p-button-text">
+                <p-button icon="pi pi-check" (click)="displayBasic=false; addcustomLink(customLink)" label="Ok"
+                    styleClass="p-button-text">
                 </p-button>
             </ng-template>
         </p-dialog>
@@ -54,10 +60,64 @@
             </p-divider>
 
             <ng-container *ngFor="let custom of links">
-                <p  class="custom-link-p"> <b>{{custom.buttonName}}</b> - <u style=" color: #4F46E5;" >{{custom.link}}</u></p>
+                <p class="custom-link-p"> <b>{{custom.buttonName}}</b> - <u style=" color: #4F46E5;">{{custom.link}}</u>
+                </p>
             </ng-container>
 
-            <p-button *ngIf="links.length > 0" class="add-custom-link" label="Add Custom Link"  (click)="displayBasic=true" icon="pi pi-plus" styleClass="p-button-link"></p-button>
+            <p-button *ngIf="links.length > 0" class="add-custom-link" label="Add Custom Link"
+                (click)="displayBasic=true" icon="pi pi-plus" styleClass="p-button-link"></p-button>
+        </section>
+    </div>
+
+    <div class="desktop-msg-container">
+        <section class="social-media-url-body">
+            <h4>Social Links</h4>
+            <div class="grid p-2">
+                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                            class="pi pi-youtube social-icon"></i> YouTube</span> </div>
+                <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
+                        placeholder="Enter subscribe on youtube url" /> </div>
+            </div>
+            <div class="grid p-2">
+                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                            class="pi pi-twitter social-icon"></i> Twitter</span> </div>
+                <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
+                        placeholder="Enter follow on twitter url" /> </div>
+            </div>
+            <div class="grid p-2">
+                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                            class="pi pi-linkedin social-icon"></i> Linkedin</span> </div>
+                <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
+                        placeholder="Enter follow on linkedin url" /> </div>
+            </div>
+            <div class="grid p-2">
+                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                            class="pi pi-instagram social-icon"></i> Instagram</span> </div>
+                <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
+                        placeholder="Enter follow on instagram url" /> </div>
+            </div>
+        </section>
+        <p-button class="add-custom-link" routerLink="/setup-social-media" label="Edit Social Link" icon="pi pi-pencil" styleClass="p-button-link">
+        </p-button>
+
+        <section class="social-media-url-body mt-5">
+            <h4>Add Custom Links</h4>
+
+            <ng-container *ngFor="let custom of links">
+                <div class="grid p-2">
+                    <div class="col-2 col-offset-2 flex  align-items-center"> <input [(ngModel)]="custom.buttonName"  type="text" class="text-sm"
+                            style="width:100%" pInputText placeholder="Enter button name" /> </div>
+                    <div class="col-6 "> <input type="text" class="text-sm" [(ngModel)]="custom.link"  style="width:100%" pInputText
+                            placeholder="Enter  url" /> </div>
+                </div>
+            </ng-container>
+
+            <div class="grid p-2">
+                <button pButton pRipple type="button" label="Add more"
+                    class="col-8 col-offset-2 p-button-outlined p-button-rounded" (click)="addBlankcustomLink()"></button>
+
+            </div>
+
         </section>
     </div>
 

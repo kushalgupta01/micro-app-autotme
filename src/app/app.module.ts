@@ -27,7 +27,6 @@ import {DialogModule} from 'primeng/dialog';
 import {DropdownModule} from 'primeng/dropdown';
 import { SetupSocialMediaComponent } from './views/setup-social-media/setup-social-media.component';
 import { SocialMediaLinkRendererComponent } from './views/shared/social-media-link-renderer/social-media-link-renderer.component';
-import { MyLinksPageComponent } from './views/my-links-page/my-links-page.component';
 
 
 @NgModule({
@@ -39,8 +38,7 @@ import { MyLinksPageComponent } from './views/my-links-page/my-links-page.compon
     LoginOtpComponent,
     VerifyOtpComponent,
     SetupSocialMediaComponent,
-    SocialMediaLinkRendererComponent,
-    MyLinksPageComponent
+    SocialMediaLinkRendererComponent
   ],
   imports: [
     BrowserModule,

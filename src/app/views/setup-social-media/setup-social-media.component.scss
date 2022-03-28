@@ -37,6 +37,9 @@ h3{
   
 }
 
+.desktop-msg-container{
+    display: none;
+}
 .field-checkbox{
     display: flex;
     align-items: baseline;
@@ -58,4 +61,94 @@ h3{
     margin-top: 40px;
 }
 
+@media screen and (min-width: 968px) {
+
+    .mob-header{
+        display: none ;
+    }
+
+    .social-icon{
+        min-width: 30px;
+    }
+
+    .social-icon{
+        min-width: 20px;
+    }
+    .pi-youtube{
+        color: #FF0000;
+        }
+
+        .pi-twitter{
+            color: #00ACEE;
+            }
+
+            .pi-linkedin{
+                color: #0E76A8;
+                }
+
+    .desktop-msg-container{
+        display: block;
+        width: 70%;
+        margin: auto;
+        margin-top: 25px;
+    }
+
+    .msg-container{
+        display: none ;
+    }
+    
+    .logout{
+        padding-top: 1%;
+        margin-right: 100px;
+    }
+    
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo{
+        color: var(--autotme-primary);
+        padding-top: 0%;
+        padding-left: 4%;text-align: start;
+    }
+
+    h3{
+        color: var(--text-color);
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .home{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+        margin-top: 30px;
+        grid-gap: 1em;
+        padding: 0% 10%;
+        color: var(--text-color);
+    }
+
+    :host ::ng-deep {
+        .p-card .p-card-body{
+            height: 100px;
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    }
+    .social-media-url{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .field-checkbox{
+        display: flex;
+        align-items: baseline;
+      margin: 10px;
+    }
+    .social-media-url{
+        margin-top: 20px;
+    }
+}
 
