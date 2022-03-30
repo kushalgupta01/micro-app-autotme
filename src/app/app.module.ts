@@ -28,6 +28,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { SetupSocialMediaComponent } from './views/setup-social-media/setup-social-media.component';
 import { SocialMediaLinkRendererComponent } from './views/shared/social-media-link-renderer/social-media-link-renderer.component';
 import { MyLinksPageComponent } from './views/my-links-page/my-links-page.component';
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { MyLinksPageComponent } from './views/my-links-page/my-links-page.compon
     InputTextModule,
     FormsModule,
     ReactiveFormsModule,
-    CardModule,
+    CardModule,TableModule,
     HttpClientModule, 
     RadioButtonModule,
     InputTextareaModule,

@@ -15,16 +15,17 @@
     <div class="logo"> autotme </div>
 
 </div>
+<div style="width: 70%;margin: auto;">
 <h3>Engagement Features</h3>
-<div class="home">
-    <p-card routerLink="/set-message" styleClass="p-card-shadow">
+<div class="grid">
+    <p-card class="col-4" routerLink="/set-message" styleClass="p-card-shadow">
         Setup Smart Messages
     </p-card>
 
-    <p-card routerLink="/setup-social-media" styleClass="p-card-shadow">
+    <p-card class="col-4" routerLink="/setup-social-media" styleClass="p-card-shadow">
         Social Media Handles
     </p-card>
-    <p-card routerLink="/my-link-page" styleClass="p-card-shadow">
+    <p-card class="col-4" routerLink="/my-link-page" styleClass="p-card-shadow">
         My Links Page
     </p-card>
 
@@ -33,17 +34,17 @@
 </div>
 
 <h3>Monetization Features</h3>
-<div class="home">
-    <p-card routerLink="/set-message" styleClass="p-card-shadow">
+<div class="grid">
+    <p-card class="col-4" routerLink="/set-message" styleClass="p-card-shadow">
         Setup Merchandise store
         <div>(Coming Soon)</div>
     </p-card>
 
-    <p-card routerLink="/setup-social-media" styleClass="p-card-shadow">
+    <p-card class="col-4" routerLink="/setup-social-media" styleClass="p-card-shadow">
         Setup Paid Telegram Group
         <div>(Coming Soon)</div>
     </p-card>
-    <p-card routerLink="/my-link-page" styleClass="p-card-shadow">
+    <p-card class="col-4" routerLink="/my-link-page" styleClass="p-card-shadow">
         Create Smart Payment Page
         <div>(Coming Soon)</div>
     </p-card>
@@ -52,4 +53,45 @@
 
 </div>
 
-<div></div>
+<div class="scheduled-table">
+    <h4>Ongoing Scheduled Messages</h4>
+    <p-table  >
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Message Text</th>
+                <th>Api</th>
+                <th>Scheduled time</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+            <tr>
+                <td><p>sdgfdf</p></td>
+                <td>gdfgfdg</td>
+                <td>gdfgdg</td>
+                <td>dfgdfgdfg</td>
+            </tr>
+
+              <tr>
+                <td><p>sdgfdf</p></td>
+                <td>gdfgfdg</td>
+                <td>gdfgdg</td>
+                <td>dfgdfgdfg</td>
+            </tr>
+
+              <tr>
+                <td><p>sdgfdf</p></td>
+                <td>gdfgfdg</td>
+                <td>gdfgdg</td>
+                <td>dfgdfgdfg</td>
+            </tr>  <tr>
+                <td><p>sdgfdf</p></td>
+                <td>gdfgfdg</td>
+                <td>gdfgdg</td>
+                <td>dfgdfgdfg</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+</div>

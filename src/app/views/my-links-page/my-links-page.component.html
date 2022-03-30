@@ -73,28 +73,28 @@
         <section class="social-media-url-body">
             <h4>Social Links</h4>
             <div class="grid p-2">
-                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                <div class="col-3 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
                             class="pi pi-youtube social-icon"></i> YouTube</span> </div>
                 <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
-                        placeholder="Enter subscribe on youtube url" /> </div>
+                        placeholder="Enter youtube url" /> </div>
             </div>
             <div class="grid p-2">
-                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                <div class="col-3 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
                             class="pi pi-twitter social-icon"></i> Twitter</span> </div>
                 <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
-                        placeholder="Enter follow on twitter url" /> </div>
+                        placeholder="Enter twitter url" /> </div>
             </div>
             <div class="grid p-2">
-                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                <div class="col-3 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
                             class="pi pi-linkedin social-icon"></i> Linkedin</span> </div>
                 <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
-                        placeholder="Enter follow on linkedin url" /> </div>
+                        placeholder="Enter linkedin url" /> </div>
             </div>
             <div class="grid p-2">
-                <div class="col-2 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
+                <div class="col-3 col-offset-2 flex  align-items-center"> <span class="flex  align-items-center"> <i
                             class="pi pi-instagram social-icon"></i> Instagram</span> </div>
                 <div class="col-6 "> <input disabled type="text" class="text-sm" style="width:100%" pInputText
-                        placeholder="Enter follow on instagram url" /> </div>
+                        placeholder="Enter instagram url" /> </div>
             </div>
         </section>
         <p-button class="add-custom-link" routerLink="/setup-social-media" label="Edit Social Link" icon="pi pi-pencil" styleClass="p-button-link">
@@ -105,7 +105,7 @@
 
             <ng-container *ngFor="let custom of links">
                 <div class="grid p-2">
-                    <div class="col-2 col-offset-2 flex  align-items-center"> <input [(ngModel)]="custom.buttonName"  type="text" class="text-sm"
+                    <div class="col-3 col-offset-2 flex  align-items-center"> <input [(ngModel)]="custom.buttonName"  type="text" class="text-sm"
                             style="width:100%" pInputText placeholder="Enter button name" /> </div>
                     <div class="col-6 "> <input type="text" class="text-sm" [(ngModel)]="custom.link"  style="width:100%" pInputText
                             placeholder="Enter  url" /> </div>
