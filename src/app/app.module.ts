@@ -29,7 +29,8 @@ import { SetupSocialMediaComponent } from './views/setup-social-media/setup-soci
 import { SocialMediaLinkRendererComponent } from './views/shared/social-media-link-renderer/social-media-link-renderer.component';
 import { MyLinksPageComponent } from './views/my-links-page/my-links-page.component';
 import {TableModule} from 'primeng/table';
-
+import {TabViewModule} from 'primeng/tabview';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,10 @@ import {TableModule} from 'primeng/table';
     TooltipModule,
     SidebarModule,
     DividerModule,
-    DropdownModule
+    DropdownModule,
+    TabViewModule ,
+    CheckboxModule
+    
 
   ],
   providers: [],

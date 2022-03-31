@@ -1,148 +1,337 @@
-<!-- <div class="grid p-fluid">
-    <div class="col-12 md:col-4 logo">autotme</div>
-    <div class="title"> Messaging Platform</div>
-
-    <div class="msg-type">
-        <div style="font-weight: 600;"> Select Type of Message</div>
-        <div class="cards">
-            <div class="field-radiobutton">
-                <p-radioButton name="msgType" value="static" [(ngModel)]="smartMsg.msgType" inputId="static">
-                </p-radioButton>
-                <label for="static"> Static Message</label>
-            </div>
-            <div class="field-radiobutton">
-                <p-radioButton name="msgType" value="api" [(ngModel)]="smartMsg.msgType" inputId="api"></p-radioButton>
-                <label for="api">Api Based Message</label>
-            </div>
-        </div>
-
-
-        <div style="font-weight: 600;margin-top: 10px;"> Add Message Content</div>
-        <div class="field" style="margin-top: 30px;">
-            <label for="username1" class="block">Enter API End Point (optional)</label>
-            <input id="username1" type="username" aria-describedby="username1-help" pInputText
-                [(ngModel)]="smartMsg.apiEndPoint" />
-
-        </div>
-        <div class="field" style="margin-top: 10px;">
-            <label for="staticMsg" class="block">Enter Text</label>
-            <textarea  id="staticMsg"   [(ngModel)]="smartMsg.text" pInputTextarea></textarea>        
-        </div>
-        <div class="field" style="margin-top: 10px;">
-            <label for="username1" class="block">Enter Image Url</label>
-            <input id="username1" type="username" aria-describedby="username1-help" pInputText
-                [(ngModel)]="smartMsg.imageUrl" />
-
-        </div> <div class="field" style="margin-top: 10px;">
-            <label for="username1" class="block">Enter Landing Url</label>
-            <input id="username1" type="username" aria-describedby="username1-help" pInputText
-                [(ngModel)]="smartMsg.landingUrl" />
-
-        </div>
-        <div style="margin-top: 30px;">When to send this message</div>
-        <p-fieldset style="margin-top: 10px;" legend="One Time">
-            <div class="field col-12 md:col-4">
-                <label for="icon">Date</label>
-                <p-calendar [(ngModel)]="smartMsg.date" [showIcon]="true" inputId="icon"></p-calendar>
-            </div>
-            <div style="margin-top: 10px;" class="field col-12 md:col-3">
-                <label for="timeonly">Time</label>
-                <p-calendar [(ngModel)]="smartMsg.time" [timeOnly]="true"  inputId="time"></p-calendar>
-            </div>
-        </p-fieldset>
-        <p-fieldset style="margin-top: 10px;" legend="Recurring">
-            Every Sunday
-        </p-fieldset>
-
-
-        <div class="col-4 md:col-4  mt-10" style="margin-top: 10px;">
-            <button pButton type="button" class="p-button-raised p-button-rounded" (click)="submitData($event)">Submit</button>
-        </div>
-    </div> -->
-
 <div style="padding-bottom: 20px;">
-<p-sidebar [(visible)]="visibleSidebar1" p-sidebar-sm [baseZIndex]="10000">
-    <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" label="logout"></p-button>
-</p-sidebar>
-<div class="header">
-    <div class="logo"> autotme </div>
-    <div class="logout">
-        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()"></p-button>
-    </div>
-</div>
-
-<div class="mob-header">
-    <div class="slider">
-        <p-button icon="pi pi-align-justify" (click)="visibleSidebar1 = true"></p-button>
-    </div>
-    <div class="logo"> autotme </div>
-
-</div>
-<h3>Messaging Platform</h3>
-<div class="msg-container">
-    <p><b> Add Message Content </b></p>
-    <div class="msg-form">
-        <div class="field">
-            <p>Enter Text : </p>
-
-            <textarea class="inp-field" id="staticMsg" [(ngModel)]="smartMsg.text" pInputTextarea></textarea>
+    <p-sidebar [(visible)]="visibleSidebar1" p-sidebar-sm [baseZIndex]="10000">
+        <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()" label="logout"></p-button>
+    </p-sidebar>
+    <div class="header">
+        <div class="logo"> autotme </div>
+        <div class="logout">
+            <p-button icon="pi pi-sign-out" pTooltip="logout" (click)="logout()"></p-button>
         </div>
-        <div class="field">
-            <label for="username1" class="block">Enter Image Url : </label>
-            <input class="inp-field" id="username1" type="username" aria-describedby="username1-help" pInputText
-                [(ngModel)]="smartMsg.imageUrl" />
-
-        </div>
-
-        <div class="field">
-            <label for="username1" class="block">Enter Landing Url : </label>
-            <input class="inp-field" id="username1" type="username" aria-describedby="username1-help" pInputText
-                [(ngModel)]="smartMsg.landingUrl" />
-
-        </div>
-
-        <div class="field">
-            <p-divider align="left">
-                When to send this message
-            </p-divider>
-
-        </div>
-
-        <div class="field">
-            <div style="margin-bottom: 10px;">
-                <p>Date : </p>
-            </div>
-            <p-calendar class="inp-field" [touchUI]="true" [readonlyInput]="true" inputId="touchui"></p-calendar>
-        </div>
-        <div class="field">
-            <div style="margin-bottom: 10px;">
-                <p>Time : </p>
-            </div>
-            <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'" inputId="timeonly"></p-calendar>
-        </div>
-
-        <div class="field">
-            <div>
-                <p>Repeat : </p>
-            </div>
-            
-            <p-button class="inp-field" label="None" styleClass="p-button-link" (click)="showBasicDialog()"></p-button>
-         
-            <p-dialog [modal]="true" [blockScroll]="true" header="Repeat" [(visible)]="displayBasic" [style]="{width: '90vw',height:'60vh'}">
-                <p-dropdown [options]="repeatSelection" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
-
-                <ng-template pTemplate="footer">
-                    <p-button icon="pi pi-check" (click)="displayBasic=false" label="Ok" styleClass="p-button-text">
-                    </p-button>
-                </ng-template>
-            </p-dialog>
-        </div>
-
-
     </div>
 
+    <div class="mob-header">
+        <div class="slider">
+            <p-button icon="pi pi-align-justify" (click)="visibleSidebar1 = true"></p-button>
+        </div>
+        <div class="logo"> autotme </div>
 
-</div>
+    </div>
+    <h3>Messaging Platform</h3>
+    <div class="msg-container">
+        <p><b> Add Message Content </b></p>
+        <div class="msg-form">
+            <div class="field">
+                <p>Enter Text : </p>
 
-<div class="save-changes-btn"><button pButton type="button"  label="Save changes" ></button></div>
+                <textarea class="inp-field" id="staticMsg" [(ngModel)]="smartMsg.text" pInputTextarea></textarea>
+            </div>
+            <div class="field">
+                <label for="username1" class="block">Enter Image Url : </label>
+                <input class="inp-field" id="username1" type="username" aria-describedby="username1-help" pInputText
+                    [(ngModel)]="smartMsg.imageUrl" />
+
+            </div>
+
+            <div class="field">
+                <label for="username1" class="block">Enter Landing Url : </label>
+                <input class="inp-field" id="username1" type="username" aria-describedby="username1-help" pInputText
+                    [(ngModel)]="smartMsg.landingUrl" />
+
+            </div>
+
+            <div class="field">
+                <p-divider align="left">
+                    When to send this message
+                </p-divider>
+
+            </div>
+
+            <div class="field">
+                <div style="margin-bottom: 10px;">
+                    <p>Date : </p>
+                </div>
+                <p-calendar class="inp-field" [touchUI]="true" [readonlyInput]="true" inputId="touchui"></p-calendar>
+            </div>
+            <div class="field">
+                <div style="margin-bottom: 10px;">
+                    <p>Time : </p>
+                </div>
+                <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'" inputId="timeonly"></p-calendar>
+            </div>
+
+            <div class="field">
+                <div>
+                    <p>Repeat : </p>
+                </div>
+
+                <p-button class="inp-field" label="None" styleClass="p-button-link" (click)="showBasicDialog()">
+                </p-button>
+
+                <p-dialog [modal]="true" [blockScroll]="true" header="Repeat" [(visible)]="displayBasic"
+                    [style]="{width: '90vw',height:'60vh'}">
+                    <p-dropdown [options]="repeatSelection" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+
+                    <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-check" (click)="displayBasic=false" label="Ok" styleClass="p-button-text">
+                        </p-button>
+                    </ng-template>
+                </p-dialog>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="desktop-msg-container ">
+
+        <p-tabView>
+            <p-tabPanel header="Static Message">
+                <div class="grid">
+                    <div class="col-10">
+                        <p><b> Add Message Content </b></p>
+                        <div class="msg-form">
+
+                            <div class="field">
+                                <p>Enter Text : </p>
+
+                                <textarea class="inp-field" id="staticMsg" [(ngModel)]="smartMsg.text"
+                                    pInputTextarea></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="username1" class="block">Enter Image Url : </label>
+                                <input class="inp-field" id="username1" type="username"
+                                    aria-describedby="username1-help" pInputText [(ngModel)]="smartMsg.imageUrl" />
+
+                            </div>
+
+                            <div class="field">
+                                <label for="username1" class="block">Enter Landing Url : </label>
+                                <input class="inp-field" id="username1" type="username"
+                                    aria-describedby="username1-help" pInputText [(ngModel)]="smartMsg.landingUrl" />
+
+                            </div>
+
+                            <div class="field">
+                                <p-divider align="left">
+                                    When to send this message
+                                </p-divider>
+
+                            </div>
+
+                            <div style="display: flex;">
+                                <div *ngFor="let category of categories" class="field-checkbox">
+                                    <p-radioButton [inputId]="category.key" style="margin-right: 10px;" name="category"
+                                        [value]="category" [(ngModel)]="smartMsg.scheduletype"></p-radioButton>
+                                    <label [for]="category.key">{{category.name}}</label>
+                                </div>
+                            </div>
+                            <div *ngIf="smartMsg.scheduletype.key === 'one'">
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Date : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [touchUI]="true" [readonlyInput]="true"
+                                        inputId="touchui">
+                                    </p-calendar>
+                                </div>
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Time : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'"
+                                        inputId="timeonly">
+                                    </p-calendar>
+                                </div>
+                            </div>
+                            <div *ngIf="smartMsg.scheduletype.key === 'daily'">
+                                <div style="display: flex;
+                                margin-top: 30px;">
+                                    <div *ngFor="let category of days" class="field-checkbox">
+                                        <p-checkbox name="category.key" value="category" [value]="category"
+                                            (ngModelChange)="onCheckBoxChange($event)" [(ngModel)]="selecteddays"
+                                            [inputId]="category.key"></p-checkbox>
+                                        <label [for]="category.key">{{category.name}}</label>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Time : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'"
+                                        inputId="timeonly">
+                                    </p-calendar>
+                                </div>
+                            </div>
+
+                            <div *ngIf="smartMsg.scheduletype.key === 'weekly'">
+                                <div style="display: flex;
+                                margin-top: 30px;    width: max-content;">
+                                    <div *ngFor="let category of weekdays" class="field-checkbox">
+                                        <p-checkbox name="category.key" value="category" [value]="category"
+                                            (ngModelChange)="onCheckBoxChange($event)" [(ngModel)]="selecteddays"
+                                            [inputId]="category.key"></p-checkbox>
+                                        <label [for]="category.key">{{category.name}}</label>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Time : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'"
+                                        inputId="timeonly">
+                                    </p-calendar>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="API Based Message">
+                <div class="grid">
+                    <div class="col-8">
+                        <p><b> Add Message Content </b></p>
+                        <div class="msg-form">
+                            <div class="field">
+                                <label for="username1" class="block">Enter API End Point (Optional) : </label>
+                                <input class="inp-field" id="username1" type="username"
+                                    aria-describedby="username1-help" pInputText [(ngModel)]="smartMsg.apiEndPoint"
+                                    (ngModelChange)="onChange($event)" />
+
+                            </div>
+                            <div class="field">
+                                <p>Enter Text : </p>
+
+                                <textarea class="inp-field" id="staticMsg" [(ngModel)]="smartMsg.text"
+                                    pInputTextarea></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="username1" class="block">Enter Image Url : </label>
+                                <input class="inp-field" id="username1" type="username"
+                                    aria-describedby="username1-help" pInputText [(ngModel)]="smartMsg.imageUrl" />
+
+                            </div>
+
+                            <div class="field">
+                                <label for="username1" class="block">Enter Landing Url : </label>
+                                <input class="inp-field" id="username1" type="username"
+                                    aria-describedby="username1-help" pInputText [(ngModel)]="smartMsg.landingUrl" />
+
+                            </div>
+
+                            <div class="field">
+                                <p-divider align="left">
+                                    When to send this message
+                                </p-divider>
+
+                            </div>
+
+                            <div style="display: flex;">
+                                <div *ngFor="let category of categories" class="field-checkbox">
+                                    <p-radioButton [inputId]="category.key" style="margin-right: 10px;" name="category"
+                                        [value]="category" [(ngModel)]="smartMsg.scheduletype"></p-radioButton>
+                                    <label [for]="category.key">{{category.name}}</label>
+                                </div>
+                            </div>
+                            <div *ngIf="smartMsg.scheduletype.key === 'one'">
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Date : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [touchUI]="true" [readonlyInput]="true"
+                                        inputId="touchui">
+                                    </p-calendar>
+                                </div>
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Time : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'"
+                                        inputId="timeonly">
+                                    </p-calendar>
+                                </div>
+                            </div>
+                            <div *ngIf="smartMsg.scheduletype.key === 'daily'">
+                                <div style="display: flex;
+                                margin-top: 30px;">
+                                    <div *ngFor="let category of days" class="field-checkbox">
+                                        <p-checkbox name="category.key" value="category" [value]="category"
+                                            (ngModelChange)="onCheckBoxChange($event)" [(ngModel)]="selecteddays"
+                                            [inputId]="category.key"></p-checkbox>
+                                        <label [for]="category.key">{{category.name}}</label>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Time : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'"
+                                        inputId="timeonly">
+                                    </p-calendar>
+                                </div>
+                            </div>
+
+                            <div *ngIf="smartMsg.scheduletype.key === 'weekly'">
+                                <div style="display: flex;
+                                margin-top: 30px;    width: max-content;">
+                                    <div *ngFor="let category of weekdays" class="field-checkbox">
+                                        <p-checkbox name="category.key" value="category" [value]="category"
+                                            (ngModelChange)="onCheckBoxChange($event)" [(ngModel)]="selecteddays"
+                                            [inputId]="category.key"></p-checkbox>
+                                        <label [for]="category.key">{{category.name}}</label>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="field">
+                                    <div style="margin-bottom: 10px;">
+                                        <p>Time : </p>
+                                    </div>
+                                    <p-calendar class="inp-field" [timeOnly]="true" [hourFormat]="'12'"
+                                        inputId="timeonly">
+                                    </p-calendar>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div *ngIf="keys.length > 0" class="msg-form"
+                            style=" box-shadow: rgb(99 102 241 / 10%) 0px 7px 29px 0px;">
+                            <div class="variables">
+                                <h4 style="text-align: center;">Available Variables From API</h4>
+
+                                <div class="grid">
+                                    <ng-container *ngFor="let var12 of keys">
+                                        <span class="variable col-6"
+                                            style="text-align: center; color: tomato;   padding: 10px;box-shadow: rgb(99 102 241 / 10%) 0px 2px 5px 0px;">{{var12}}</span>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+
+
+
+    </div>
+
+    <div class="save-changes-btn"><button pButton type="button" label="Save changes"></button></div>
 </div>

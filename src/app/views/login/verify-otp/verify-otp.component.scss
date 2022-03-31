@@ -52,7 +52,7 @@
     grid-template-columns: repeat(8,1fr);
 }
 
-.text-input p-inputNumber{
+.text-input input{
   
     grid-row: 1;
     grid-column: 2/8;
@@ -97,7 +97,7 @@
        margin-bottom: 10px;
     }
 
-    .text-input p-inputNumber{
+    .text-input input{
         
         grid-row: 1;
         grid-column: 3/7;

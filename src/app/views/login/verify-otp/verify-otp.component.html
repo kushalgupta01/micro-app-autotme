@@ -10,8 +10,9 @@
 
 <div class="text-input grid">
   
-    <p-inputNumber (onInput)="enteredOtp($event)" mode="decimal" inputId="withoutgrouping" [min]="0" [max]="9999999" [useGrouping]="false">
-    </p-inputNumber>
+   
+
+    <input type="text" pInputText [(ngModel)]="enteredotp" (ngModelChange)="enteredOtp($event)"/>
 </div>
 <div class="gen-otp-btn grid">
     <button pButton type="button" [disabled]="!otpValue" label="Submit OTP" (click)="verifyOTP()" ></button>

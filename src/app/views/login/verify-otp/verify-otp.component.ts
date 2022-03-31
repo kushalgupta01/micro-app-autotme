@@ -15,6 +15,7 @@ export class VerifyOtpComponent implements OnInit {
   isOtpGenerationSuccesful: boolean = false;
   mobileNumber:string | undefined;
   isCorrectOTPEntered:boolean=true;
+  enteredotp:string='';
   ngOnInit(): void {
     this.otp = localStorage.getItem('otp');
     let mobile= '9619495380'
@@ -39,7 +40,7 @@ export class VerifyOtpComponent implements OnInit {
   }
 
   enteredOtp(otp: any) {
-    this.otpValue = otp.value;
+    this.otpValue = otp;
 
   }
   regenerateOTP() {

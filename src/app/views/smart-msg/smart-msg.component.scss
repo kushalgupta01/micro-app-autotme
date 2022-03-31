@@ -49,7 +49,87 @@ h3{
         width: 100%;
     }
 }
+.desktop-msg-container {
+    display: none;
+}
 
 .msg-form .field ::ng-deep .p-divider-content{
 font-size: 12px;
+}
+
+@media screen and (min-width: 968px) {
+
+    .msg-container{
+        display: none;
+    }
+    .desktop-msg-container {
+        display: block;
+    }
+
+    .mob-header{
+        display: none ;
+    }
+    
+    .logout{
+        padding-top: 1%;
+        margin-right: 100px;
+    }
+    
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo{
+        color: var(--autotme-primary);
+        padding-top: 0%;
+        padding-left: 4%;text-align: start;
+    }
+
+    h3{
+        color: var(--text-color);
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .home{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+        margin-top: 30px;
+        grid-gap: 1em;
+        padding: 0% 10%;
+        color: var(--text-color);
+    }
+
+    :host ::ng-deep {
+        .p-card .p-card-body{
+            height: 100px;
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    }
+
+    h4{
+        color: var(--text-color);}
+
+    .desktop-msg-container{
+        width: 70%;
+        margin: auto;
+    }    
+
+    .variable{
+        color: var(--text-color);
+    }
+
+    .variables{
+        h4{
+            color: var(--autotme-primary);}
+    }
+
+    .field-checkbox{
+        margin-right:25px ;
+    }
+
+       
 }
